@@ -18,8 +18,9 @@ test-paths:
   - tests
 target-path: target
 clean-targets:
-    - "target"
-    - "dbt_modules"
+  - "target"
+  - "dbt_modules"
+
 
 vars:
   load_date: 'current_timestamp'
@@ -43,4 +44,11 @@ models:
       sats:
         tags:
           - 'satellite'
-
+    pit:
+      tags:
+        - 'pit'
+      materialized: incremental
+    marts:
+      tags:
+        - 'mart'
+      materialized: table
